@@ -2,12 +2,13 @@ const express = require('express');
 const cors = require('cors');
 const connectToMongoDb = require('./config/mongodb.js');
 const createContactController = require('./controllers/createContactController.js');
+const appConfig = require('./config/appConfig.js');
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
-const port = 5000;
+const port = appConfig.PORT;
 
 connectToMongoDb();
 
